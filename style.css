@@ -1,0 +1,93 @@
+/*
+Theme Name: ITPharma2
+Theme URI: https://github.com/siarheidudko/ITPharma2
+Author: Siarhei Dudko, Alena Moroz
+Author URI: https://sergdudko.tk
+Description: Тема для сайта itpharma.by
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: itpharma2
+Tags: multicolor, custom-color, one-column, top-sidebar, flexible-width, custom-header, custom-menu, microformats, bootstrap
+*/
+@font-face {
+	font-family: RalewayRegular;
+	font-style: normal;
+	src: url(/wp-content/themes/itpharma2/fonts/Raleway-Regular.ttf);
+}
+@font-face {
+	font-family: RalewayBold;
+	font-style: normal;
+	src: url(/wp-content/themes/itpharma2/fonts/Raleway-Bold.ttf);
+}
+#general_link_contacts a,.navbar-dark .itpharma2_fakelink a, .navbar-dark #navbarText ul li a{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+#general_link_contacts a:focus,.navbar-dark .itpharma2_fakelink a:focus,.navbar-dark #navbarText ul li a:focus{
+	color:#d2d2d2;
+}
+.navbar-dark #navbarText .active a div div, .itpharma2_raleway_bold{
+	font-family: RalewayBold;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 35px;
+}
+#navbarText ul li a{
+	color:#FFFFFF;
+	text-decoration: none;
+}
+#itpharma2_primarynavbar{
+	min-height:135px;
+}
+#itpharma2_logoimg{
+	margin:33px 0px 34px 47px;
+	width:100%;
+}
+#itpharma2_toggler{
+	min-width:70px;
+	min-height:70px;
+}
+.itpharma2_nav_normal{
+	padding: 11px 38px 17px 38px;
+}
+#itpharma2_footer div, .itpharma2_nav_normal div, .itpharma2_raleway{
+	font-family: RalewayRegular;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 35px;
+}
+.itpharma2_nav_orange{
+	background: #FF8A00;
+	border-radius: 2px;
+	color: #FFFFFF;
+	margin-right: 47px;
+}
+.itpharma2_social{
+	margin-right:32px;
+}
+#itpharma2_footer{
+	min-height: 340px;
+}
+#itpharma2_footerlogo{
+	margin: 42px 0px 84px 50px;
+}
+#footer_copyright{
+	margin: 0px 0px 0px 61px;
+}
+#itpharma2_footer_2, #itpharma2_footer_3{
+	padding-top: 64px;
+}
+#itpharma2_footer_2{
+	margin: 10px 50px 10px 50px;
+}
+#itpharma2_footer_3{
+	margin: 10px 80px 10px 0px;
+}
+#itpharma2_sociallink{
+	margin-top: 39px;
+}
