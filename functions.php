@@ -211,6 +211,36 @@ function itpharma2_customize_register($wp_customize) {
 			'type'     => 'text',
 		)
 	));
+	//телефон на странице связаться с нами
+	$wp_customize->add_setting( 'itpharma2_contacts_tel' , array(
+		'default' => '+375 (17) 269-88-30',
+	));
+	//контроллер телефона на странице связаться с нами
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'itpharma2_contacts_tel_', 
+		array(
+			'label'    => __( 'Телефон на странице связаться с нами', 'itpharma2' ),
+			'section'  => 'itpharma2_customizer',
+			'settings' => 'itpharma2_contacts_tel',
+			'type'     => 'text',
+		)
+	));
+	//адрес на странице связаться с нами
+	$wp_customize->add_setting( 'itpharma2_contacts_address' , array(
+		'default' => 'Минск,пр. Независимости, д.177, офис 62',
+	));
+	//контроллер адреса на странице связаться с нами
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'itpharma2_contacts_address_', 
+		array(
+			'label'    => __( 'Адресс на странице связаться с нами', 'itpharma2' ),
+			'section'  => 'itpharma2_customizer',
+			'settings' => 'itpharma2_contacts_address',
+			'type'     => 'text',
+		)
+	));
 	//код внутри блока <HEAD></HEAD>
 	$wp_customize->add_setting( 'itpharma2_head_code' , array(
 		'default' => '',

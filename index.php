@@ -1,15 +1,3 @@
- <?php
-/**
- * Основная тема для сайта itpharma.by
- *
- * @package ITPharma2
- * @subpackage ITPharma2
- * @since 1.0
- * @version 1.0
- * @author Siarhei Dudko
- * @license MIT
- */
-?>
 <!--
 	Theme Name: ITPharma2
 	Theme URI: https://github.com/siarheidudko/ITPharma2
@@ -22,6 +10,18 @@
 	Text Domain: itpharma2
 	Tags: multicolor, custom-color, one-column, top-sidebar, flexible-width, custom-header, custom-menu, microformats, bootstrap
 -->
+<?php
+/**
+ * Основная тема для сайта itpharma.by
+ *
+ * @package ITPharma2
+ * @subpackage ITPharma2
+ * @since 1.0
+ * @version 1.0
+ * @author Siarhei Dudko
+ * @license MIT
+ */
+?>
 <?php 
 	get_header(); 
 ?>
