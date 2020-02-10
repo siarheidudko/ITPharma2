@@ -8,6 +8,7 @@
  * @version 1.0
  * @author Siarhei Dudko
  * @license MIT
+ * @page хуки в ядро
  */
 
 function itpharma2_wptuts_scripts_basic()  
@@ -50,14 +51,13 @@ add_filter( 'after_setup_theme', 'itpharma2_delete_junk_from_header' );
 function itpharma2_theme_support() {
 	//добавляю кастомный лого
 	add_theme_support( 'custom-logo', [
-		'height'      => 68,
-		'width'       => 244,
+		'height'      => 35,
+		'width'       => 126,
 		'flex-width'  => false,
 		'flex-height' => false,
 		'header-text' => 'ITPharma',
 	] );
 	//добавляю кастомный фон
-	add_theme_support( 'custom-background' );
 	$defaults = array(
 		'default-color'          => '',
 		'default-image'          => '',
@@ -69,8 +69,13 @@ function itpharma2_theme_support() {
 		'admin-preview-callback' => ''
 	);
 	add_theme_support( 'custom-background', $defaults );
+	//добавляю поддержку миниатюр записей
+	add_theme_support( 'post-thumbnails' );
+	//обрезаю миниатюры
+	set_post_thumbnail_size( 380, 301, true );
 	//добавляю меню
-	register_nav_menu( 'primary', 'Основное меню' );
+	register_nav_menu( 'primary', 'Меню в шапке' );
+	register_nav_menu( 'secondary', 'Меню в подвале' );
 }
 add_filter( 'after_setup_theme', 'itpharma2_theme_support' );
 
@@ -80,6 +85,22 @@ function itpharma2_customize_register($wp_customize) {
 	$wp_customize->add_section( 'itpharma2_customizer' , array(
 		'title'      => __('Настройка темы','itpharma2'),
 		'priority'   => 30,
+	));
+	//цвет фона за пределами страницы
+	$wp_customize->add_setting( 'itpharma2_page_background' , array(
+		'default' => '#616161',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	//контроллер цвета фона за пределами страницы
+	$wp_customize->add_control( new WP_Customize_Color_Control( 
+		$wp_customize, 
+		'itpharma2_page_background_', 
+		array(
+			'label'      => __( 'Цвет фона страницы (за пределами сайта)', 'itpharma2' ),
+			'section'    => 'itpharma2_customizer',
+			'settings'   => 'itpharma2_page_background',
+			'priority'   => 1
+		)
 	));
 	//стиль текста шапки и подвала
 	$wp_customize->add_setting( 'itpharma2_header_footer_textstyle' , array(
@@ -128,8 +149,8 @@ function itpharma2_customize_register($wp_customize) {
 				'label'      => __( 'Логотип в подвале', 'itpharma2' ),
 				'section'    => 'itpharma2_customizer',
 				'settings'   => 'itpharma2_footer_logo',
-				'height' => 89,
-				'width' => 318,
+				'height' => 42,
+				'width' => 151,
 				'flex_width ' => false,
 				'flex_height ' => false,
 				'priority' => 1
@@ -211,16 +232,16 @@ function itpharma2_customize_register($wp_customize) {
 			'type'     => 'text',
 		)
 	));
-	//телефон на странице связаться с нами
+	//телефон (факс) на странице связаться с нами
 	$wp_customize->add_setting( 'itpharma2_contacts_tel' , array(
 		'default' => '+375 (17) 269-88-30',
 	));
-	//контроллер телефона на странице связаться с нами
+	//контроллер телефона (факса) на странице связаться с нами
 	$wp_customize->add_control( new WP_Customize_Control(
 		$wp_customize,
 		'itpharma2_contacts_tel_', 
 		array(
-			'label'    => __( 'Телефон на странице связаться с нами', 'itpharma2' ),
+			'label'    => __( 'Факс на странице связаться с нами', 'itpharma2' ),
 			'section'  => 'itpharma2_customizer',
 			'settings' => 'itpharma2_contacts_tel',
 			'type'     => 'text',

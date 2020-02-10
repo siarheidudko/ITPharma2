@@ -20,25 +20,44 @@
  * @version 1.0
  * @author Siarhei Dudko
  * @license MIT
+ * @page главная страница (кроме 404)
  */
 ?>
 <?php 
 	get_header(); 
 ?>
-
-<div id="bodycontent">
-	<?php
-		if(get_post()->post_title === 'главная'){
-			include '_general.php';
-		} else {
-			if( have_posts() ){
-				while( have_posts() ):
-					the_post();
-					the_content();
-				endwhile;
+<div class="cropbody">
+	<div id="bodycontent" style="margin:0em;">
+		<?php
+			switch(get_post()->post_title){
+				case 'главная':
+					include '_page.general.php';
+					include '_div.contacts.php';
+					break;
+				case 'база знаний':
+					include '_page.wiki.php';
+					break;
+				case 'связаться с нами':
+					include '_page.contacts.php';
+					break;
+				case 'новости':
+					include '_page.news.php';
+					include '_div.contacts.php';
+					break;
+				default:
+					echo '<div style="display:block;float:left;">';	//защита от схлопывания
+					if( have_posts() ){
+						while( have_posts() ):
+							the_post();
+							the_content();
+						endwhile;
+					}
+					echo '</div>';
+					include '_div.contacts.php';
+					break;
 			}
-		}
-	?>
+		?>
+	</div>
 </div>
 
 <?php 
