@@ -99,7 +99,11 @@
 						if($page->title === 'связаться с нами'){
 							echo ' itpharma2_nav_orange';
 						}
-						echo '"><div class="itpharma2-overflow-dotted" style="max-width:10em;">' . esc_html($page->title) . '</div></div></a></li>';
+						echo '"><div class="itpharma2-overflow-dotted" style="max-width:10em;';
+							if(wp_is_mobile() === true){
+								echo 'font-size:3em;line-height:2em;';
+							}
+						echo '">' . esc_html($page->title) . '</div></div></a></li>';
 					}
 				?>
 			</ul>

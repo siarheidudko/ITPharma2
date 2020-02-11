@@ -44,16 +44,26 @@
 					include '_page.news.php';
 					include '_div.contacts.php';
 					break;
+				case 'о нас':
+					include '_page.aboutus.php';
+					include '_div.contacts.php';
+					break;
+				case 'продукты':
+					include '_page.products.php';
+					include '_div.contacts.php';
+					break;
 				default:
-					echo '<div style="display:block;float:left;">';	//защита от схлопывания
+					echo '<div class="w-100" style="display:block;float:left;">';	//защита от схлопывания
 					if( have_posts() ){
 						while( have_posts() ):
 							the_post();
-							the_content();
+							echo '<div>' . apply_filters('the_content', get_post()->post_content) . '</div>';
 						endwhile;
 					}
+					if(has_category( array("Новости"), get_post() )){	//подключаю блок "связаться с нами" для рубрики "Новости"
+						include '_div.contacts.php';
+					}
 					echo '</div>';
-					include '_div.contacts.php';
 					break;
 			}
 		?>

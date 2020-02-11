@@ -14,16 +14,22 @@
 	include_once '_div.name.php';	//функция вывода наименования блока
 	nameDiv('Новости');				//наименование блока
 	$col = 3;						//кол-во слолбцов для вывода
+	$post_on_page = 20; 			//количество постов на странице
+	$offset = 0;					//сдвиг относительно первой записи
+	$category = 'Новости';			//категория
+	if(isset($_GET['offset'])){
+		$offset = intval($_GET['offset']);
+	}
  ?>
 <div class="d-flex flex-column itpharma2_raleway">
 	<div class="d-flex flex-row" style="border-top:1px solid #C4C4C4;box-sizing:border-box;height:2px;"></div>
 </div>
 <div class="d-flex flex-column itpharma2_raleway" style="display:flex;">
-	<div style="margin:1.63em 2.22em 1.63em 2.22em;"><?php
-		// Получим ID категории
-		$category_id = get_cat_ID( 'Новости' );
+	<div style="margin:1.63em 2.22em 1.63em 2.22em;"><?php		
+		$category_id = get_cat_ID( $category );				// Получим ID категории
 		$posts = get_posts( array(
-			'numberposts' => 50,
+			'numberposts' => $post_on_page,
+			'offset' => $offset,
 			'category'    => $category_id,
 			'orderby'     => 'date',
 			'order'       => 'DESC',
@@ -77,5 +83,53 @@
 		}
 	?></div>
 </div>
-<!--div class="w-100" style="align-items:center;justify-content:center;height:1.5em;"></div-->
+<div class="d-flex flex-column itpharma2_raleway" style="display:flex;">
+	<div class="d-flex flex-row">
+		<div class="d-flex flex-column justify-content-center align-self-stretch" style="flex:1;">
+			<?php
+				if($offset>0){
+					$prewpost = $offset - $post_on_page;
+					if($prewpost < 0)
+						$prewpost = 0;
+					echo '<a href="news/?offset=' . $prewpost . '" class="d-flex flex-row" style="color:#74C1D3;text-decoration:none;align-items:center;justify-content:center;">
+						<div class="d-flex flex-column">
+							<svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.8335 20L15.8335 0L0.000163078 10L15.8335 20Z" fill="#74C1D3"/>
+							</svg>
+						</div>
+						<div class="d-flex flex-column" style="font-size:1.4em;line-height:1.5em;margin-left:0.5em;">
+							Предыдущая
+						</div>
+					</a>';
+				}
+			?>
+		</div>
+		<div class="d-flex flex-column justify-content-center align-self-stretch" style="flex:3;"></div>
+		<div class="d-flex flex-column justify-content-center align-self-stretch" style="flex:1;">
+			<?php
+				$nextpost = $offset+$post_on_page;
+				$posts = get_posts( array(
+					'numberposts' => 1,
+					'offset' => $nextpost,
+					'category'    => $category_id,
+					'orderby'     => 'date',
+					'order'       => 'DESC',
+				) );
+				if(count($posts)>0){
+					echo '<a href="news/?offset=' . $nextpost . '" class="d-flex flex-row" style="color:#74C1D3;text-decoration:none;align-items:center;justify-content:center;">
+						<div class="d-flex flex-column" style="font-size:1.4em;line-height:1.5em;margin-right:0.5em;">
+							Следующая
+						</div>
+						<div class="d-flex flex-column">
+							<svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 0L0 24L19 12L0 0Z" fill="#74C1D3"/>
+							</svg>
+						</div>
+					</a>';
+				}
+			?>
+		</div>
+	</div>
+</div>
+<div class="w-100" style="align-items:center;justify-content:center;height:1.5em;"></div>
 	

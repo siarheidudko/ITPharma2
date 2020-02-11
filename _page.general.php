@@ -29,7 +29,7 @@
 <div class="d-flex flex-column itpharma2_raleway">
 	<div class="w-100" style="pading-right:2em;pading-left:2em;">
 		<div class="d-flex flex-row justify-content-center">
-			<div class="d-flex flex-column justify-content-center align-self-stretch w-25" style="text-align:center;margin-left:2em;background:rgba(169, 221, 251, 0.2);border-radius:3px;">
+			<a href="/products?iRetailPOS" class="d-flex flex-column justify-content-center align-self-stretch w-25" style="text-align:center;margin-left:2em;background:rgba(169, 221, 251, 0.2);border-radius:3px;color:#000000;text-decoration:none;">
 				<div class="d-flex flex-row" style="margin:auto;">
 					<img class="w-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-products-iretailpos.jpg'; ?>" alt="iRetailPOS" />
 				</div>
@@ -39,8 +39,8 @@
 					</div>
 					<div class="d-flex flex-column justify-content-center align-self-stretch" style="margin-left:1em;font-size:1.0em;overflow:hidden;">iRetailPOS</div>
 				</div>
-			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch w-25" style="text-align:center;margin-left:2em;background:rgba(169, 221, 251, 0.2);border-radius:3px;">
+			</a>
+			<a href="/products?iRetailManagement" class="d-flex flex-column justify-content-center align-self-stretch w-25" style="text-align:center;margin-left:2em;background:rgba(169, 221, 251, 0.2);border-radius:3px;color:#000000;text-decoration:none;">
 				<div class="d-flex flex-row" style="margin:auto;">
 					<img class="w-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-products-iretailmanagement.jpg'; ?>" alt="iRetailManagement" />
 				</div>
@@ -50,8 +50,8 @@
 					</div>
 					<div class="d-flex flex-column justify-content-center align-self-stretch" style="margin-left:1em;font-size:1.0em;overflow:hidden;">iRetailManagement</div>
 				</div>
-			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch w-25" style="text-align:center;margin-left:2em;background:rgba(169, 221, 251, 0.2);border-radius:3px;">
+			</a>
+			<a href="/products?iRetailCloud" class="d-flex flex-column justify-content-center align-self-stretch w-25" style="text-align:center;margin-left:2em;background:rgba(169, 221, 251, 0.2);border-radius:3px;color:#000000;text-decoration:none;">
 				<div class="d-flex flex-row" style="margin:auto;">
 					<img class="w-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-products-iretailcloud.jpg'; ?>" alt="iRetailCloud" />
 				</div>
@@ -61,47 +61,15 @@
 					</div>
 					<div class="d-flex flex-column justify-content-center align-self-stretch" style="margin-left:1em;font-size:1.0em;overflow:hidden;">iRetailCloud</div>
 				</div>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
-	<?php 
-		nameDiv('О нас'); 	//наименование блока
-	?>
-<div class="d-flex flex-column itpharma2_raleway">
-	<div style="display:flex;align-items:center;justify-content:center;min-height:6em;">
-		<div style="text-align:center;">
-			<div class="itpharma2_raleway" style="margin-right:2em;margin-left:2em;">
-				<?php echo apply_filters('the_content', get_post()->post_content); ?>
-			</div>
-		</div>
-	</div>
-	<div class="d-flex flex-row" style="margin: 2em 0em 2em 0em;border-bottom:1px solid #C4C4C4;box-sizing:border-box;height:2px;"></div>
-	<div class="d-flex flex-row" style="margin-right:2em;margin-left:2em;">
-		<div class="d-flex flex-column justify-content-center align-self-stretch" style="width:33%;text-align:center;">
-			<div style="font-size:1.4em;line-height:1.5em;">94 аптеки</div>
-		</div>
-		<div class="d-flex flex-column justify-content-center align-self-stretch" style="width:33%;text-align:center;">
-			<div style="font-size:1.4em;line-height:1.5em;">2019</div>
-		</div>
-		<div class="d-flex flex-column justify-content-center align-self-stretch" style="width:33%;text-align:center;">
-			<div style="font-size:1.4em;line-height:1.5em;">7 лет</div>
-		</div>
-	</div>
-	<div class="d-flex flex-row" style="margin-right:2em;margin-left:2em;">
-		<div class="d-flex flex-column justify-content-center align-self-stretch" style="width:33%;text-align:center;">
-			<div style="font-size:1.1em;font-weight:350;">уже используют наше ПО</div>
-		</div>
-		<div class="d-flex flex-column justify-content-center align-self-stretch" style="width:33%;text-align:center;">
-			<div style="font-size:1.1em;font-weight:350;">резидент ПВТ</div>
-		</div>
-		<div class="d-flex flex-column justify-content-center align-self-stretch" style="width:33%;text-align:center;">
-			<div style="font-size:1.1em;font-weight:350;">опыта и разработок</div>
-		</div>
-	</div>
-	<div class="d-flex flex-row" style="margin-top:2.16em;border-top:1px solid #C4C4C4;box-sizing:border-box;height:2px;"></div>
-</div>
-<?php
-	include '_div.tehnology.php';	//подключаю блок технологий
-	include '_div.news.php';		//подключаю блок новостей
+<?php 
+	nameDiv('О нас'); 													//наименование блока
+
+	echo apply_filters('the_content', get_post()->post_content); 		//вывожу контент страницы
+
+	include '_div.tehnology.php';										//подключаю блок технологий
+	include '_div.news.php';											//подключаю блок новостей
 ?>

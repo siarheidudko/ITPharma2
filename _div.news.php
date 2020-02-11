@@ -15,7 +15,7 @@
 	nameDiv('Новости'); 				//наименование блока
 ?>
 <div class="d-flex flex-column itpharma2_raleway">
-	<div class="w-100" style="display:flex;align-items:center;justify-content:center;min-height:4em;font-size:1.625em;line-height:1.885em;">
+	<div class="w-100" style="display:block;align-items:center;justify-content:center;min-height:4em;font-size:1.625em;line-height:1.885em;">
 		<div class="d-flex flex-row" style="margin: 0em 2em 0em 2em;"><?php
 			// Получим ID категории
 			$category_id = get_cat_ID( 'Новости' );
@@ -53,6 +53,9 @@
 						</div>
 					</a>
 				</div>';
+			}
+			if(count($posts) === 1){
+				echo '<div class="d-flex flex-column justify-content-center align-self-stretch w-50" style="text-align:center;"></div>';
 			}
 		?></div>
 	</div>

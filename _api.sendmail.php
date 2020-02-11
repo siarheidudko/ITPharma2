@@ -29,7 +29,7 @@ try{
 		include '../../../wp-load.php';
 		
 		$subject = 'Сообщение с сайта '.get_bloginfo('name');
-		$body = $json['message'];
+		$body = $json['message'] . PHP_EOL . 'Контактное лицо: ' . $json['name'] . ' <' . $json['email'] . '>' . PHP_EOL;
 		$headers = array('Content-Type: text/html; charset=UTF-8');
 		$to = get_theme_mod('itpharma2_footer_email');
 		if(isset($to)){
