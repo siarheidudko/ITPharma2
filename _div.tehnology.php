@@ -17,40 +17,40 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <div class="d-flex flex-column itpharma2_raleway">	
-	<div style="align-items:center;justify-content:center;min-height:4em;margin-right:2em;margin-left:2em;">
+	<div style="align-items:center;justify-content:center;margin-right:2em;margin-left:2em;">
 		<div class="d-flex flex-row" id="galleryTehnology" style="overflow-x:hidden;display:block !important;">
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-ws.png'; ?>" alt="websocket" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-ws.png'; ?>" alt="websocket" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-dotnet.png'; ?>" alt="dotnet" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-dotnet.png'; ?>" alt="dotnet" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-devexpress.png'; ?>" alt="devexpress" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-devexpress.png'; ?>" alt="devexpress" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-react.png'; ?>" alt="react" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-react.png'; ?>" alt="react" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-node.png'; ?>" alt="node" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-node.png'; ?>" alt="node" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-fr.png'; ?>" alt="fastreport" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-fr.png'; ?>" alt="fastreport" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-delphi.png'; ?>" alt="delphi" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-delphi.png'; ?>" alt="delphi" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-js.png'; ?>" alt="js" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-js.png'; ?>" alt="js" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-csharp.png'; ?>" alt="csharp" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-csharp.png'; ?>" alt="csharp" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-1c.png'; ?>" alt="1c" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-1c.png'; ?>" alt="1c" />
 			</div>
-			<div class="d-flex flex-column justify-content-center align-self-stretch">
-				<img style="max-height:6em" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-php.png'; ?>" alt="php" />
+			<div class="d-flex flex-column justify-content-center">
+				<img class="mw-100" src="<?php echo get_stylesheet_directory_uri().'/img/home-lent-php.png'; ?>" alt="php" />
 			</div>
 		</div>
 	</div>
