@@ -60,8 +60,9 @@
 							echo '<div>' . apply_filters('the_content', get_post()->post_content) . '</div>';
 						endwhile;
 					}
-					if(has_category( array("Новости"), get_post() )){	//подключаю блок "связаться с нами" для рубрики "Новости"
-						include '_div.contacts.php';
+					if(has_category( array("Новости"), get_post() )){
+						include '_div.newsnavigator.php';							//подключаю навигацию по новостям
+						include '_div.contacts.php';								//подключаю блок "связаться с нами" для рубрики "Новости"
 					}
 					echo '</div>';
 					break;
